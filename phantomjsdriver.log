@@ -9,7 +9,8 @@
 [INFO  - 2016-12-07T21:18:42.238Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:23:42.238Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:28:42.244Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-07T21:33:42.244Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:03:11.415Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 8fd20fb0-bcc0-11e6-966e-afda98c5d295
 [ERROR - 2016-12-07T21:03:21.550Z] Session [8fd20fb0-bcc0-11e6-966e-afda98c5d295] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:03:21.550Z] Session [8fd20fb0-bcc0-11e6-966e-afda98c5d295] - page.onError - stack:
@@ -36,7 +37,8 @@
 [INFO  - 2016-12-07T21:21:15.774Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:26:15.774Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:31:15.776Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-07T21:36:15.785Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:08:30.245Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 4ddb8180-bcc1-11e6-ac6d-1745c05b5bc9
 [ERROR - 2016-12-07T21:08:41.652Z] Session [4ddb8180-bcc1-11e6-ac6d-1745c05b5bc9] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:08:41.652Z] Session [4ddb8180-bcc1-11e6-ac6d-1745c05b5bc9] - page.onError - stack:
@@ -61,8 +63,8 @@ Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","d
 [INFO  - 2016-12-07T21:19:28.177Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:24:28.176Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:29:28.178Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-2-11e6-a0df-61b04d8c3b8a] - page.customHeaders:  - {}
-[INFO  - 2016-12-07T21:14:03.888Z] Session [14b98a40-bcc2-11e6-a0df-61b04d8c3b8a] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-07T21:34:28.190Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:14:03.888Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 14b98a40-bcc2-11e6-a0df-61b04d8c3b8a
 [ERROR - 2016-12-07T21:14:19.079Z] Session [14b98a40-bcc2-11e6-a0df-61b04d8c3b8a] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:14:19.080Z] Session [14b98a40-bcc2-11e6-a0df-61b04d8c3b8a] - page.onError - stack:
@@ -73,3 +75,4 @@ Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","d
 [INFO  - 2016-12-07T21:19:03.487Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:24:03.493Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:29:03.494Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-12-07T21:34:03.509Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
