@@ -12,8 +12,8 @@
 [INFO  - 2016-12-07T21:33:42.244Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:38:42.253Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:43:42.255Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-- _postNewSessionCommand - New Session Created: 8fd20fb0-bcc0-11e6-966e-afda98c5d295
-[ERROR - 2016-12-07T21:03:21.550Z] Session [8fd20fb0-bcc0-11e6-966e-afda98c5d295] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
+[INFO  - 2016-12-07T21:48:42.258Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+bcc0-11e6-966e-afda98c5d295] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:03:21.550Z] Session [8fd20fb0-bcc0-11e6-966e-afda98c5d295] - page.onError - stack:
   (anonymous function) (https://fr.minergate.com/app.js?t=1:17)
 [ERROR - 2016-12-07T21:03:23.392Z] Session [8fd20fb0-bcc0-11e6-966e-afda98c5d295] - page.onError - msg: SyntaxError: DOM Exception 12: An invalid or illegal string was specified.
@@ -27,8 +27,8 @@
 [INFO  - 2016-12-07T21:33:11.020Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:38:11.021Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:43:11.020Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2016-12-07T21:06:16.136Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: fdec18b0-bcc0-11e6-9905-adf7a64032da
+[INFO  - 2016-12-07T21:48:11.020Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+- _postNewSessionCommand - New Session Created: fdec18b0-bcc0-11e6-9905-adf7a64032da
 [ERROR - 2016-12-07T21:06:28.062Z] Session [fdec18b0-bcc0-11e6-9905-adf7a64032da] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:06:28.062Z] Session [fdec18b0-bcc0-11e6-9905-adf7a64032da] - page.onError - stack:
   (anonymous function) (https://fr.minergate.com/app.js?t=1:17)
@@ -42,7 +42,8 @@ false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:31:15.776Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:36:15.785Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:41:15.785Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-07T21:46:15.787Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:08:30.245Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 4ddb8180-bcc1-11e6-ac6d-1745c05b5bc9
 [ERROR - 2016-12-07T21:08:41.652Z] Session [4ddb8180-bcc1-11e6-ac6d-1745c05b5bc9] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:08:41.652Z] Session [4ddb8180-bcc1-11e6-ac6d-1745c05b5bc9] - page.onError - stack:
@@ -57,7 +58,8 @@ false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:33:29.879Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:38:29.880Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:43:29.880Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-07T21:48:29.886Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:09:28.577Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 70a06a50-bcc1-11e6-b2db-17a2cd20de3c
 [ERROR - 2016-12-07T21:09:44.384Z] Session [70a06a50-bcc1-11e6-b2db-17a2cd20de3c] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:09:44.384Z] Session [70a06a50-bcc1-11e6-b2db-17a2cd20de3c] - page.onError - stack:
@@ -86,3 +88,4 @@ false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:34:03.509Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:39:03.520Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:44:03.521Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-12-07T21:49:03.524Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
