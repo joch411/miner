@@ -10,7 +10,8 @@
 [INFO  - 2016-12-07T21:23:42.238Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:28:42.244Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:33:42.244Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-07T21:38:42.253Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:03:11.415Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 8fd20fb0-bcc0-11e6-966e-afda98c5d295
 [ERROR - 2016-12-07T21:03:21.550Z] Session [8fd20fb0-bcc0-11e6-966e-afda98c5d295] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:03:21.550Z] Session [8fd20fb0-bcc0-11e6-966e-afda98c5d295] - page.onError - stack:
@@ -24,7 +25,8 @@
 [INFO  - 2016-12-07T21:23:11.007Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:28:11.018Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:33:11.020Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-07T21:38:11.021Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:06:16.136Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: fdec18b0-bcc0-11e6-9905-adf7a64032da
 [ERROR - 2016-12-07T21:06:28.062Z] Session [fdec18b0-bcc0-11e6-9905-adf7a64032da] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:06:28.062Z] Session [fdec18b0-bcc0-11e6-9905-adf7a64032da] - page.onError - stack:
@@ -51,7 +53,8 @@
 [INFO  - 2016-12-07T21:23:29.863Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:28:29.869Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:33:29.879Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-07T21:38:29.880Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:09:28.577Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 70a06a50-bcc1-11e6-b2db-17a2cd20de3c
 [ERROR - 2016-12-07T21:09:44.384Z] Session [70a06a50-bcc1-11e6-b2db-17a2cd20de3c] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:09:44.384Z] Session [70a06a50-bcc1-11e6-b2db-17a2cd20de3c] - page.onError - stack:
@@ -64,7 +67,8 @@ Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","d
 [INFO  - 2016-12-07T21:24:28.176Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:29:28.178Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:34:28.190Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2016-12-07T21:39:28.191Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
 [INFO  - 2016-12-07T21:14:03.888Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 14b98a40-bcc2-11e6-a0df-61b04d8c3b8a
 [ERROR - 2016-12-07T21:14:19.079Z] Session [14b98a40-bcc2-11e6-a0df-61b04d8c3b8a] - page.onError - msg: Unhandled promise rejection TypeError: undefined is not an object (evaluating 'e.response.text')
 [ERROR - 2016-12-07T21:14:19.080Z] Session [14b98a40-bcc2-11e6-a0df-61b04d8c3b8a] - page.onError - stack:
@@ -76,3 +80,4 @@ Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","d
 [INFO  - 2016-12-07T21:24:03.493Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:29:03.494Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
 [INFO  - 2016-12-07T21:34:03.509Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2016-12-07T21:39:03.520Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW

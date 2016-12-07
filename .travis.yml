@@ -13,3 +13,5 @@ script:
 cache:
   directories:
   - $HOME/.m2
+addons:
+  firefox: "46.0"
