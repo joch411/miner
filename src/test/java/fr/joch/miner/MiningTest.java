@@ -35,9 +35,10 @@ public class MiningTest {
 		restartMining(webDriver);
 
 		int last0 = 0;
-		for (int i = 0; i < 10000; i++) {
+		for (int i = 0; i < 3500; i++) {
 			float v = extractVelocity();
-			System.out.println(MessageFormat.format("{0}H/s| {1} shares", v, getShares()));
+			System.out.println(MessageFormat.format("{0}H/s| {1} shares",
+					Float.toString(v), Long.toString(getShares())));
 			if (v == 0) {
 				last0++;
 			}
@@ -66,7 +67,7 @@ public class MiningTest {
 
 		return Float.parseFloat(text);
 	}
-	
+
 	private long getShares() {
 		String text = shares.getText().replace("Taux de hachage", "");
 		text = text.replace("\r\n", "").replace("<br>", "").replace("H/s", "");
