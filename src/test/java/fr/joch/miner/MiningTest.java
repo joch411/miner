@@ -58,7 +58,7 @@ public class MiningTest {
 		monero.findElement(By.className("btn")).click();
 
 		velocity = monero.findElements(By.className("data")).get(0);
-		shares = monero.findElements(By.className("data")).get(1);
+		shares = monero.findElements(By.className("data")).get(1).findElement(By.tagName("b"));
 	}
 
 	private float extractVelocity() {
@@ -70,7 +70,7 @@ public class MiningTest {
 
 	private String getShares() {
 		String text = shares.getText().replace("Partages envoyer.", "");
-		text = text.replace("\r\n", "").replace("<br>", "").replace("H/s", "");
+		text = text.replace("\r", "").replace("\n", "").replace("<br>", "").replace("H/s", "");
 		return text;
 	}
 }
