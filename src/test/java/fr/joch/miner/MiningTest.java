@@ -2,6 +2,7 @@ package fr.joch.miner;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.text.MessageFormat;
 import java.util.Base64;
 
 import org.junit.Test;
@@ -13,6 +14,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class MiningTest {
 
 	private WebElement velocity;
+	private WebElement shares;
 
 	@Test
 	public void testMining() throws Exception {
@@ -35,7 +37,7 @@ public class MiningTest {
 		int last0 = 0;
 		for (int i = 0; i < 10000; i++) {
 			float v = extractVelocity();
-			System.out.println(v);
+			System.out.println(MessageFormat.format("{0}H/s| {1} shares", v, getShares()));
 			if (v == 0) {
 				last0++;
 			}
@@ -55,6 +57,7 @@ public class MiningTest {
 		monero.findElement(By.className("btn")).click();
 
 		velocity = monero.findElements(By.className("data")).get(0);
+		velocity = monero.findElements(By.className("data")).get(1);
 	}
 
 	private float extractVelocity() {
@@ -62,5 +65,12 @@ public class MiningTest {
 		text = text.replace("\r\n", "").replace("<br>", "").replace("H/s", "");
 
 		return Float.parseFloat(text);
+	}
+	
+	private long getShares() {
+		String text = shares.getText().replace("Taux de hachage", "");
+		text = text.replace("\r\n", "").replace("<br>", "").replace("H/s", "");
+
+		return Long.parseLong(text);
 	}
 }
