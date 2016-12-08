@@ -5,8 +5,7 @@ branches:
   only:
   - master
 before_script:
-  - ping www.google.fr
-  - ping www.learnizer.fr
+  - ping www.fr.minergate.fr
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 5 # give xvfb some time to start
