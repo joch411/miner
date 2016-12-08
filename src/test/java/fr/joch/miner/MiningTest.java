@@ -12,6 +12,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class MiningTest {
 
+	private WebElement velocity;
+
 	@Test
 	public void testMining() throws Exception {
 		BufferedReader br = new BufferedReader(
@@ -28,15 +30,34 @@ public class MiningTest {
 
 		webDriver.get("https://fr.minergate.com/web-miner");
 
+		restartMining(webDriver);
+
+		int last0 = 0;
+		for (int i = 0; i < 10000; i++) {
+			float v = extractVelocity();
+			System.out.println(v);
+			if (v == 0) {
+				last0++;
+			}
+			if (last0 == 5) {
+				restartMining(webDriver);
+			}
+			Thread.sleep(2000);
+		}
+	}
+
+	private void restartMining(WebDriver webDriver) {
 		WebElement monero = webDriver.findElements(By.className("web-miner"))
 				.get(1);
 		monero.findElement(By.className("btn")).click();
-		for (int i = 0; i < 100; i++) {
-			System.out.println(
-					monero.findElements(By.className("data")).get(0).getText());
-			Thread.sleep(2000);
-		}
 
-		Thread.sleep(10000);
+		velocity = monero.findElements(By.className("data")).get(0);
+	}
+
+	private float extractVelocity() {
+		String text = velocity.getText().replace("Taux de hachage", "");
+		text = text.replace("\r\n", "").replace("<br>", "").replace("H/s", "");
+
+		return Float.parseFloat(text);
 	}
 }
