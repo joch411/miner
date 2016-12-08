@@ -38,7 +38,7 @@ public class MiningTest {
 		for (int i = 0; i < 3500; i++) {
 			float v = extractVelocity();
 			System.out.println(MessageFormat.format("{0}H/s| {1} shares",
-					Float.toString(v), Long.toString(getShares())));
+					Float.toString(v), getShares()));
 			if (v == 0) {
 				last0++;
 			}
@@ -58,7 +58,7 @@ public class MiningTest {
 		monero.findElement(By.className("btn")).click();
 
 		velocity = monero.findElements(By.className("data")).get(0);
-		velocity = monero.findElements(By.className("data")).get(1);
+		shares = monero.findElements(By.className("data")).get(1);
 	}
 
 	private float extractVelocity() {
@@ -68,10 +68,9 @@ public class MiningTest {
 		return Float.parseFloat(text);
 	}
 
-	private long getShares() {
-		String text = shares.getText().replace("Taux de hachage", "");
+	private String getShares() {
+		String text = shares.getText().replace("Partages envoyer.", "");
 		text = text.replace("\r\n", "").replace("<br>", "").replace("H/s", "");
-
-		return Long.parseLong(text);
+		return text;
 	}
 }
