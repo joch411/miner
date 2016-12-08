@@ -41,12 +41,15 @@ public class MiningTest {
 			}
 			if (last0 == 5) {
 				restartMining(webDriver);
+				last0 = 0;
+				Thread.sleep(2000);
 			}
 			Thread.sleep(2000);
 		}
 	}
 
 	private void restartMining(WebDriver webDriver) {
+		System.out.println("Restarting mining ....");
 		WebElement monero = webDriver.findElements(By.className("web-miner"))
 				.get(1);
 		monero.findElement(By.className("btn")).click();
