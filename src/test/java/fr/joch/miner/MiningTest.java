@@ -42,7 +42,7 @@ public class MiningTest {
 			if (v == 0) {
 				last0++;
 			}
-			if (last0 == 5) {
+			if (last0 == 8) {
 				restartMining(webDriver);
 				last0 = 0;
 				Thread.sleep(2000);
