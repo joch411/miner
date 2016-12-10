@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MiningTest {
 
@@ -21,7 +21,7 @@ public class MiningTest {
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(getClass().getResourceAsStream("cred")));
 
-		WebDriver webDriver = new FirefoxDriver();
+		WebDriver webDriver = new ChromeDriver();
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/login");
 		webDriver.findElement(By.name("email"))
