@@ -1,18 +1,23 @@
+sudo: required  
+dist: trusty
 language: java
 jdk:
 - oraclejdk8
 branches:
   only:
   - master
-before_script:
-  - ls -ltr /home/travis/firefox-50.0.2/firefox
+before_install:  
+  - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 10 # give xvfb some time to start
+  - sudo apt-get update
+  - sudo apt-get install -y libappindicator1 fonts-liberation
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome*.deb
+  - ls -ltr /usr/bin/google-chrome
 script:
-  - mvn test -Dwebdriver.gecko.driver=/home/travis/firefox-50.0.2/firefox/firefox
+  - mvn test -Dwebdriver.chrome.driver=/usr/bin/google-chrome
 cache:
   directories:
   - $HOME/.m2
-addons:
-  firefox: "50.0.2"
