@@ -9,9 +9,9 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - sleep 10 # give xvfb some time to start
 script:
-  - mvn test -Dwebdriver.gecko.driver=/home/travis/47.0/firefox/firefox
+  - mvn test -Dwebdriver.gecko.driver=/home/travis/firefox-47.0/firefox/firefox
 cache:
   directories:
   - $HOME/.m2
 addons:
-  firefox: "47.0"
+  firefox: "47.0.0"
