@@ -5,8 +5,7 @@ branches:
   only:
   - master
 before_script:
-  - cd /home/travis/
-  - ls -ltr
+  - ls -ltr /home/travis/firefox-50.0.2/firefox
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 10 # give xvfb some time to start
