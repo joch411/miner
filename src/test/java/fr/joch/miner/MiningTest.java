@@ -62,7 +62,7 @@ public class MiningTest {
 		}
 		
 		WebElement monero = webDriver.findElements(By.className("web-miner"))
-				.get(1);
+				.get(Integer.parseInt(System.getProperty("indexToMine")));
 		monero.findElement(By.className("btn")).click();
 		velocity = monero.findElements(By.className("data")).get(0);
 		shares = monero.findElements(By.className("data")).get(1)
@@ -73,7 +73,7 @@ public class MiningTest {
 		webDriver.get("https://fr.minergate.com/web-miner");
 		System.out.println("Restarting mining ....");
 		WebElement monero = webDriver.findElements(By.className("web-miner"))
-				.get(1);
+				.get(Integer.parseInt(System.getProperty("indexToMine")));
 		monero.findElement(By.className("btn")).click();
 
 		velocity = monero.findElements(By.className("data")).get(0);
