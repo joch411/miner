@@ -63,6 +63,9 @@ public class MiningTest {
 			if (v == 0) {
 				last0++;
 			}
+			else {
+				last0 = 0;
+			}
 			if (last0 == 9) {
 				restartMining(webDriver);
 				last0 = 0;
