@@ -3,17 +3,16 @@ package fr.joch.miner;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
-import java.util.Arrays;
-import java.util.Base64;
+import java.text.SimpleDateFormat;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class MiningTest {
 
@@ -36,12 +35,17 @@ public class MiningTest {
 			webDriver = new FirefoxDriver();
 		}
 		webDriver.manage().window().maximize();
-		webDriver.get("https://fr.minergate.com/login");
-		webDriver.findElement(By.name("email"))
-				.sendKeys(new String(Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
-		webDriver.findElement(By.name("password"))
-				.sendKeys(new String(Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
-		webDriver.findElement(By.cssSelector("[type='submit']")).click();
+		Cookie token = new Cookie("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDA2MzAxLCJleHAiOjE0OTY5NTgzMDF9.sCxxeeray8XxEM4c7XMAzKc-w30oXqve2nS4JLM6N7k", ".minergate.com", "/", new SimpleDateFormat("dd/MM/yyyy").parse("08/06/2017"), false, false);
+		webDriver.get("https://fr.minergate.com/web-miner");
+		webDriver.manage().addCookie(token);
+		
+		Thread.sleep(5000);
+//		webDriver.get("https://fr.minergate.com/login");
+//		webDriver.findElement(By.name("email"))
+//				.sendKeys(new String(Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
+//		webDriver.findElement(By.name("password"))
+//				.sendKeys(new String(Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
+//		webDriver.findElement(By.cssSelector("[type='submit']")).click();
 
 		webDriver.get("https://fr.minergate.com/web-miner");
 		restartMining(webDriver);
