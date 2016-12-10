@@ -18,11 +18,16 @@ public class MiningTest {
 
 	private WebElement velocity;
 	private WebElement shares;
+	private int indexToMine = 1;
 
 	@Test
 	public void testMining() throws Exception {
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(getClass().getResourceAsStream("cred")));
+		
+		if (System.getProperty("indexToMine") != null) {
+			indexToMine = Integer.parseInt(System.getProperty("indexToMine"));
+		}
 
 		WebDriver webDriver;
 		if ("chrome".equals(System.getProperty("driver"))) {
@@ -58,7 +63,7 @@ public class MiningTest {
 			if (v == 0) {
 				last0++;
 			}
-			if (last0 == 8) {
+			if (last0 == 9) {
 				restartMining(webDriver);
 				last0 = 0;
 				Thread.sleep(2000);
@@ -67,7 +72,7 @@ public class MiningTest {
 		}
 
 		WebElement monero = webDriver.findElements(By.className("web-miner"))
-				.get(Integer.parseInt(System.getProperty("indexToMine")));
+				.get(indexToMine);
 		monero.findElement(By.className("btn")).click();
 		velocity = monero.findElements(By.className("data")).get(0);
 		shares = monero.findElements(By.className("data")).get(1)
@@ -75,10 +80,10 @@ public class MiningTest {
 	}
 
 	private void restartMining(WebDriver webDriver) throws Exception {
-		System.out.println("Restarting mining ....");
 		WebElement monero = webDriver.findElements(By.className("web-miner"))
-				.get(Integer.parseInt(System.getProperty("indexToMine")));
+				.get(indexToMine);
 		if ("Stop".equals(monero.findElement(By.className("btn")).getText())) {
+			System.out.println("Restarting mining ....");
 			monero.findElement(By.className("btn")).click();
 			Thread.sleep(2000);
 		}
