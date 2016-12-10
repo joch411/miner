@@ -12,6 +12,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class MiningTest {
 
@@ -22,10 +24,8 @@ public class MiningTest {
 	public void testMining() throws Exception {
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(getClass().getResourceAsStream("cred")));
-
-		ChromeOptions options = new ChromeOptions();
-		options.addArguments(Arrays.asList("no-sandbox"));
-		WebDriver webDriver = new ChromeDriver(options);
+		
+		WebDriver webDriver = new FirefoxDriver();
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/login");
 		webDriver.findElement(By.name("email"))
