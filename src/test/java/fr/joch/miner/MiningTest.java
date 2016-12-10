@@ -38,9 +38,9 @@ public class MiningTest {
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/login");
 		webDriver.findElement(By.name("email"))
-				.sendKeys(Base64.getDecoder().decode(br.readLine()).toString());
+				.sendKeys(new String(Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
 		webDriver.findElement(By.name("password"))
-				.sendKeys(Base64.getDecoder().decode(br.readLine()).toString());
+				.sendKeys(new String(Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
 		webDriver.findElement(By.cssSelector("[type='submit']")).click();
 
 		webDriver.get("https://fr.minergate.com/web-miner");
