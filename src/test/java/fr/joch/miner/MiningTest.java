@@ -42,7 +42,8 @@ public class MiningTest {
 		webDriver.findElement(By.name("password"))
 				.sendKeys(Base64.getDecoder().decode(br.readLine()).toString());
 		webDriver.findElement(By.cssSelector("[type='submit']")).click();
-
+		
+		webDriver.get("https://fr.minergate.com/web-miner");
 		restartMining(webDriver);
 
 		int last0 = 0;
@@ -70,7 +71,6 @@ public class MiningTest {
 	}
 
 	private void restartMining(WebDriver webDriver) {
-		webDriver.get("https://fr.minergate.com/web-miner");
 		System.out.println("Restarting mining ....");
 		WebElement monero = webDriver.findElements(By.className("web-miner"))
 				.get(Integer.parseInt(System.getProperty("indexToMine")));
