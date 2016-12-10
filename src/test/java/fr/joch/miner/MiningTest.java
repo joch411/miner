@@ -51,7 +51,7 @@ public class MiningTest {
 		restartMining(webDriver);
 
 		int last0 = 0;
-		for (int i = 0; i < 20 * 60 / 2; i++) {
+		for (int i = 0; i < 40 * 60 / 2; i++) {
 			float v = extractVelocity();
 			System.out.println(MessageFormat.format("{0}H/s| {1} shares",
 					Float.toString(v), getShares()));
