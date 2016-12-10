@@ -53,6 +53,7 @@ public class MiningTest {
 //		webDriver.findElement(By.cssSelector("[type='submit']")).click();
 
 		webDriver.get("https://fr.minergate.com/web-miner");
+		Thread.sleep(3000);
 		if (!webDriver.getPageSource().contains("Se déconnecter")) {
 			System.err.println("ERROR COOKIE");
 			System.exit(1);
@@ -70,7 +71,7 @@ public class MiningTest {
 			else {
 				last0 = 0;
 			}
-			if (last0 == 9) {
+			if (last0 == 9 && System.getProperty("no-restart") == null) {
 				restartMining(webDriver);
 				last0 = 0;
 				Thread.sleep(2000);
