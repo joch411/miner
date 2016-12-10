@@ -24,9 +24,7 @@ public class MiningTest {
 				new InputStreamReader(getClass().getResourceAsStream("cred")));
 
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments(
-				Arrays.asList("no-sandbox", "no-default-browser-check",
-						"no-first-run", "disable-default-apps"));
+		options.addArguments(Arrays.asList("no-sandbox"));
 		WebDriver webDriver = new ChromeDriver(options);
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/login");
