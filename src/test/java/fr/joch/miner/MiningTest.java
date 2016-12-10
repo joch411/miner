@@ -3,6 +3,7 @@ package fr.joch.miner;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
+import java.util.Arrays;
 import java.util.Base64;
 
 import org.junit.Test;
@@ -10,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class MiningTest {
 
@@ -21,7 +23,11 @@ public class MiningTest {
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(getClass().getResourceAsStream("cred")));
 
-		WebDriver webDriver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments(
+				Arrays.asList("no-sandbox", "no-default-browser-check",
+						"no-first-run", "disable-default-apps"));
+		WebDriver webDriver = new ChromeDriver(options);
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/login");
 		webDriver.findElement(By.name("email"))
@@ -58,7 +64,8 @@ public class MiningTest {
 		monero.findElement(By.className("btn")).click();
 
 		velocity = monero.findElements(By.className("data")).get(0);
-		shares = monero.findElements(By.className("data")).get(1).findElement(By.tagName("b"));
+		shares = monero.findElements(By.className("data")).get(1)
+				.findElement(By.tagName("b"));
 	}
 
 	private float extractVelocity() {
@@ -70,7 +77,8 @@ public class MiningTest {
 
 	private String getShares() {
 		String text = shares.getText().replace("Partages envoyer.", "");
-		text = text.replace("\r", "").replace("\n", "").replace("<br>", "").replace("H/s", "");
+		text = text.replace("\r", "").replace("\n", "").replace("<br>", "")
+				.replace("H/s", "");
 		return text;
 	}
 }
