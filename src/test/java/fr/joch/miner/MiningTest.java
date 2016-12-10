@@ -71,7 +71,7 @@ public class MiningTest {
 			else {
 				last0 = 0;
 			}
-			if (last0 == 9 && System.getProperty("no-restart") == null) {
+			if (last0 == 9 && System.getProperty("noRestart") == null) {
 				restartMining(webDriver);
 				last0 = 0;
 				Thread.sleep(2000);
