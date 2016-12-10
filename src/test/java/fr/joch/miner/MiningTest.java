@@ -24,8 +24,16 @@ public class MiningTest {
 	public void testMining() throws Exception {
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(getClass().getResourceAsStream("cred")));
-		
-		WebDriver webDriver = new FirefoxDriver();
+
+		WebDriver webDriver;
+		if ("chrome".equals(System.getProperty("driver"))) {
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("no-sandbox");
+			webDriver = new ChromeDriver(options);
+		}
+		else {
+			webDriver = new FirefoxDriver();
+		}
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/login");
 		webDriver.findElement(By.name("email"))
