@@ -43,12 +43,10 @@ public class MiningTest {
 				.sendKeys(Base64.getDecoder().decode(br.readLine()).toString());
 		webDriver.findElement(By.cssSelector("[type='submit']")).click();
 
-		webDriver.get("https://fr.minergate.com/web-miner");
-
 		restartMining(webDriver);
 
 		int last0 = 0;
-		for (int i = 0; i < 3500; i++) {
+		for (int i = 0; i < 20 * 60 / 2; i++) {
 			float v = extractVelocity();
 			System.out.println(MessageFormat.format("{0}H/s| {1} shares",
 					Float.toString(v), getShares()));
@@ -62,9 +60,17 @@ public class MiningTest {
 			}
 			Thread.sleep(2000);
 		}
+		
+		WebElement monero = webDriver.findElements(By.className("web-miner"))
+				.get(1);
+		monero.findElement(By.className("btn")).click();
+		velocity = monero.findElements(By.className("data")).get(0);
+		shares = monero.findElements(By.className("data")).get(1)
+				.findElement(By.tagName("b"));
 	}
 
 	private void restartMining(WebDriver webDriver) {
+		webDriver.get("https://fr.minergate.com/web-miner");
 		System.out.println("Restarting mining ....");
 		WebElement monero = webDriver.findElements(By.className("web-miner"))
 				.get(1);
