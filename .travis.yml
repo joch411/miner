@@ -6,7 +6,7 @@ branches:
   - master
 before_script:  
   - export CHROME_BIN=chromium-browser
-  - echo $CHROME_BIN
+  - whereis chromium-browser
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
   - sleep 10 # give xvfb some time to start
