@@ -33,7 +33,7 @@ public class MiningTest {
 		WebDriver webDriver;
 		if ("chrome".equals(System.getProperty("driver"))) {
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("no-sandbox");
+			options.addArguments("--no-sandbox");
 			options.addArguments("whitelisted-ips=\"\"");
 			webDriver = new ChromeDriver(options);
 		}
