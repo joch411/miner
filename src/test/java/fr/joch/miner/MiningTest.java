@@ -24,7 +24,7 @@ public class MiningTest {
 	public void testMining() throws Exception {
 		BufferedReader br = new BufferedReader(
 				new InputStreamReader(getClass().getResourceAsStream("cred")));
-		
+
 		if (System.getProperty("indexToMine") != null) {
 			indexToMine = Integer.parseInt(System.getProperty("indexToMine"));
 		}
@@ -40,20 +40,26 @@ public class MiningTest {
 			webDriver = new FirefoxDriver();
 		}
 		webDriver.manage().window().maximize();
-		Cookie token = new Cookie("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDA2MzAxLCJleHAiOjE0OTY5NTgzMDF9.sCxxeeray8XxEM4c7XMAzKc-w30oXqve2nS4JLM6N7k", ".minergate.com", "/", new SimpleDateFormat("dd/MM/yyyy").parse("08/06/2017"), false, false);
+		Cookie token = new Cookie("token",
+				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDA2MzAxLCJleHAiOjE0OTY5NTgzMDF9.sCxxeeray8XxEM4c7XMAzKc-w30oXqve2nS4JLM6N7k",
+				".minergate.com", "/",
+				new SimpleDateFormat("dd/MM/yyyy").parse("08/06/2017"), false,
+				false);
 		webDriver.get("https://fr.minergate.com/web-miner");
 		webDriver.manage().addCookie(token);
-		
-		Thread.sleep(5000);
-//		webDriver.get("https://fr.minergate.com/login");
-//		webDriver.findElement(By.name("email"))
-//				.sendKeys(new String(Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
-//		webDriver.findElement(By.name("password"))
-//				.sendKeys(new String(Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
-//		webDriver.findElement(By.cssSelector("[type='submit']")).click();
 
-		webDriver.get("https://fr.minergate.com/web-miner");
+		Thread.sleep(2000);
+
+		webDriver.get("https://fr.minergate.com/internal");
 		Thread.sleep(3000);
+		for (WebElement e : webDriver
+				.findElements(By.className("mine-title"))) {
+			System.out.println(e.getText().replace("\r\n", "")
+					.replace("BTC", "").replace("Changelly", "").replace(
+							"Historique de retraitHistorique des transfertsDébiterEnvoyer",
+							""));
+		}
+		webDriver.get("https://fr.minergate.com/web-miner");
 		if (!webDriver.getPageSource().contains("Se déconnecter")) {
 			System.err.println("ERROR COOKIE");
 			System.exit(1);
