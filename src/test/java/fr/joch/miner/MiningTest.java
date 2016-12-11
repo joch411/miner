@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -16,8 +14,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-
-import net.jsourcerer.webdriver.jserrorcollector.JavaScriptError;
 
 public class MiningTest {
 
@@ -48,7 +44,6 @@ public class MiningTest {
 			profile.setAlwaysLoadNoFocusLib(true);
 			profile.setAssumeUntrustedCertificateIssuer(true);
 			profile.setEnableNativeEvents(true);
-			JavaScriptError.addExtension(profile);
 			webDriver = new FirefoxDriver(profile);
 		}
 		webDriver.manage().window().maximize();
@@ -86,18 +81,8 @@ public class MiningTest {
 		int last0 = 0;
 		for (int i = 0; i < 40 * 60; i++) {
 			float v = extractVelocity();
-			int errors = 0;
-			StringBuilder sb = new StringBuilder();
-			try {
-				for (JavaScriptError er : JavaScriptError.readErrors(webDriver)) {
-					sb.append(er.getErrorMessage()).append(" | ");
-					errors++;
-				}
-			} catch (Exception e) {
-				// Ignore
-			}
-			System.out.println(MessageFormat.format("{0}H/s| {1} shares - Last : {2}\tErrors: {3} [{4}]",
-					Float.toString(v), getShares(), getLastShare(), errors, sb.toString()));
+			System.out.println(MessageFormat.format("{0}H/s| {1} shares - Last : {2}",
+					Float.toString(v), getShares(), getLastShare()));
 			if (v == 0) {
 				last0++;
 			}
