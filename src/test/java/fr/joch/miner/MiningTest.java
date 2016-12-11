@@ -57,6 +57,7 @@ public class MiningTest {
 		webDriver.findElement(By.cssSelector("[type='submit']")).click();
 		
 		if (!webDriver.getPageSource().contains("Se déconnecter")) {
+			System.err.println("FORCE LOGIN BY COOKIE");
 			Cookie token = new Cookie("token",
 					"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDUxOTA3LCJleHAiOjE0OTcwMDM5MDd9.dFTpxBEiLw4ul2wYUc1WBMA5gGqMo3yK2hYUrBo9vCM",
 					".minergate.com", "/",
