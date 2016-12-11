@@ -18,7 +18,7 @@ public class MiningTest {
 
 	private WebElement velocity;
 	private WebElement shares;
-	private int indexToMine = 1;
+	private int indexToMine = 0;
 	private WebElement lastShare;
 
 	@Test
