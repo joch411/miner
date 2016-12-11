@@ -19,6 +19,7 @@ public class MiningTest {
 	private WebElement velocity;
 	private WebElement shares;
 	private int indexToMine = 1;
+	private WebElement lastShare;
 
 	@Test
 	public void testMining() throws Exception {
@@ -64,7 +65,7 @@ public class MiningTest {
 		System.out.println("Mining on : " + webDriver
 				.findElements(By.className("web-miner")).get(indexToMine)
 				.findElement(By.className("name")).getText());
-		
+
 		if (!webDriver.getPageSource().contains("Se déconnecter")) {
 			System.err.println("ERROR COOKIE");
 			System.exit(1);
@@ -74,15 +75,15 @@ public class MiningTest {
 		int last0 = 0;
 		for (int i = 0; i < 40 * 60 / 2; i++) {
 			float v = extractVelocity();
-			System.out.println(MessageFormat.format("{0}H/s| {1} shares",
-					Float.toString(v), getShares()));
+			System.out.println(MessageFormat.format("{0}H/s| {1} shares - Last : {2}",
+					Float.toString(v), getShares(), getLastShare()));
 			if (v == 0) {
 				last0++;
 			}
 			else {
 				last0 = 0;
 			}
-			if (last0 == 9 && !"true".equals(System.getProperty("noRestart"))) {
+			if (last0 == 15) {
 				restartMining(webDriver);
 				last0 = 0;
 				Thread.sleep(2000);
@@ -111,6 +112,9 @@ public class MiningTest {
 		velocity = monero.findElements(By.className("data")).get(0);
 		shares = monero.findElements(By.className("data")).get(1)
 				.findElement(By.tagName("b"));
+		lastShare = monero.findElements(By.className("data")).get(1)
+				.findElement(By.tagName("small"))
+				.findElements(By.tagName("span")).get(1);
 	}
 
 	private float extractVelocity() {
@@ -124,6 +128,11 @@ public class MiningTest {
 		String text = shares.getText().replace("Partages envoyer.", "");
 		text = text.replace("\r", "").replace("\n", "").replace("<br>", "")
 				.replace("H/s", "");
+		return text;
+	}
+
+	private String getLastShare() {
+		String text = lastShare.getText();
 		return text;
 	}
 }
