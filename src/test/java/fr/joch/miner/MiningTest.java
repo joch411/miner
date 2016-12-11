@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -19,7 +20,7 @@ public class MiningTest {
 
 	private WebElement velocity;
 	private WebElement shares;
-	private int indexToMine = 0;
+	private int indexToMine = 1;
 	private WebElement lastShare;
 
 	@Test
@@ -47,13 +48,28 @@ public class MiningTest {
 			webDriver = new FirefoxDriver(profile);
 		}
 		webDriver.manage().window().maximize();
-		Cookie token = new Cookie("token",
-				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDUxOTA3LCJleHAiOjE0OTcwMDM5MDd9.dFTpxBEiLw4ul2wYUc1WBMA5gGqMo3yK2hYUrBo9vCM",
-				".minergate.com", "/",
-				new SimpleDateFormat("dd/MM/yyyy").parse("09/06/2017"), false,
-				false);
-		webDriver.get("https://fr.minergate.com/web-miner");
-		webDriver.manage().addCookie(token);
+
+		webDriver.get("https://fr.minergate.com/login");
+		webDriver.findElement(By.name("email")).sendKeys(new String(
+				Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
+		webDriver.findElement(By.name("password")).sendKeys(new String(
+				Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
+		webDriver.findElement(By.cssSelector("[type='submit']")).click();
+		
+		if (!webDriver.getPageSource().contains("Se déconnecter")) {
+			Cookie token = new Cookie("token",
+					"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDUxOTA3LCJleHAiOjE0OTcwMDM5MDd9.dFTpxBEiLw4ul2wYUc1WBMA5gGqMo3yK2hYUrBo9vCM",
+					".minergate.com", "/",
+					new SimpleDateFormat("dd/MM/yyyy").parse("09/06/2017"), false,
+					false);
+			webDriver.get("https://fr.minergate.com/web-miner");
+			webDriver.manage().addCookie(new Cookie("_ga", "GA1.2.1439058973.1480854922"));
+			webDriver.manage().addCookie(new Cookie("_gat", "1"));
+			webDriver.manage().addCookie(new Cookie("lastLang", "fr"));
+			webDriver.manage().addCookie(new Cookie("loadScripts", "true"));
+			webDriver.manage().addCookie(new Cookie("not-authed", "true"));
+			webDriver.manage().addCookie(token);
+		}
 
 		Thread.sleep(2000);
 		webDriver.get("https://fr.minergate.com/internal");
@@ -81,8 +97,9 @@ public class MiningTest {
 		int last0 = 0;
 		for (int i = 0; i < 40 * 60; i++) {
 			float v = extractVelocity();
-			System.out.println(MessageFormat.format("{0}H/s| {1} shares - Last : {2}",
-					Float.toString(v), getShares(), getLastShare()));
+			System.out.println(
+					MessageFormat.format("{0}H/s| {1} shares - Last : {2}",
+							Float.toString(v), getShares(), getLastShare()));
 			if (v == 0) {
 				last0++;
 			}
@@ -111,8 +128,8 @@ public class MiningTest {
 		if ("Stop".equals(monero.findElement(By.className("btn")).getText())) {
 			System.out.println("Restarting mining ....");
 			webDriver.get(webDriver.getCurrentUrl());
-			//Thread.sleep(1000);
-			//monero.findElement(By.className("btn")).click();
+			// Thread.sleep(1000);
+			// monero.findElement(By.className("btn")).click();
 			Thread.sleep(2000);
 			monero = webDriver.findElements(By.className("web-miner"))
 					.get(indexToMine);
