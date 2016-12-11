@@ -108,6 +108,7 @@ public class MiningTest {
 			Thread.sleep(2000);
 		}
 		monero.findElement(By.className("btn")).click();
+		Thread.sleep(5000);
 
 		velocity = monero.findElements(By.className("data")).get(0);
 		shares = monero.findElements(By.className("data")).get(1)
