@@ -114,6 +114,8 @@ public class MiningTest {
 			//Thread.sleep(1000);
 			//monero.findElement(By.className("btn")).click();
 			Thread.sleep(2000);
+			monero = webDriver.findElements(By.className("web-miner"))
+					.get(indexToMine);
 		}
 		monero.findElement(By.className("btn")).click();
 		Thread.sleep(5000);
