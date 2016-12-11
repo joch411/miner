@@ -42,9 +42,9 @@ public class MiningTest {
 		}
 		webDriver.manage().window().maximize();
 		Cookie token = new Cookie("token",
-				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDA2MzAxLCJleHAiOjE0OTY5NTgzMDF9.sCxxeeray8XxEM4c7XMAzKc-w30oXqve2nS4JLM6N7k",
+				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDUxOTA3LCJleHAiOjE0OTcwMDM5MDd9.dFTpxBEiLw4ul2wYUc1WBMA5gGqMo3yK2hYUrBo9vCM",
 				".minergate.com", "/",
-				new SimpleDateFormat("dd/MM/yyyy").parse("08/06/2017"), false,
+				new SimpleDateFormat("dd/MM/yyyy").parse("09/06/2017"), false,
 				false);
 		webDriver.get("https://fr.minergate.com/web-miner");
 		webDriver.manage().addCookie(token);
