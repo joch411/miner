@@ -107,7 +107,7 @@ public class MiningTest {
 			else {
 				last0 = 0;
 			}
-			if (last0 == 45 || getLastShare().equals("il y a 5 minutes")) {
+			if (last0 == 20 || getLastShare().equals("il y a 5 minutes")) {
 				restartMining(webDriver);
 				last0 = 0;
 				Thread.sleep(2000);
