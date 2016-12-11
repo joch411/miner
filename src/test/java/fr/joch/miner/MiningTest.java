@@ -55,16 +55,17 @@ public class MiningTest {
 		webDriver.findElement(By.name("password")).sendKeys(new String(
 				Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
 		webDriver.findElement(By.cssSelector("[type='submit']")).click();
-		
+
 		if (!webDriver.getPageSource().contains("Se déconnecter")) {
 			System.err.println("FORCE LOGIN BY COOKIE");
 			Cookie token = new Cookie("token",
 					"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDUxOTA3LCJleHAiOjE0OTcwMDM5MDd9.dFTpxBEiLw4ul2wYUc1WBMA5gGqMo3yK2hYUrBo9vCM",
 					".minergate.com", "/",
-					new SimpleDateFormat("dd/MM/yyyy").parse("09/06/2017"), false,
-					false);
+					new SimpleDateFormat("dd/MM/yyyy").parse("09/06/2017"),
+					false, false);
 			webDriver.get("https://fr.minergate.com/web-miner");
-			webDriver.manage().addCookie(new Cookie("_ga", "GA1.2.1439058973.1480854922"));
+			webDriver.manage().addCookie(
+					new Cookie("_ga", "GA1.2.1439058973.1480854922"));
 			webDriver.manage().addCookie(new Cookie("_gat", "1"));
 			webDriver.manage().addCookie(new Cookie("lastLang", "fr"));
 			webDriver.manage().addCookie(new Cookie("loadScripts", "true"));
@@ -89,8 +90,10 @@ public class MiningTest {
 				.findElements(By.className("web-miner")).get(indexToMine)
 				.findElement(By.className("name")).getText());
 
-		if (!webDriver.getPageSource().contains("Se déconnecter")) {
-			System.err.println("ERROR COOKIE");
+		if (!webDriver.getPageSource().contains("Se déconnecter")
+				|| webDriver.getPageSource()
+						.contains("To mine real money, please authorize")) {
+			System.err.println("ERROR LOGIN");
 			System.exit(1);
 		}
 		restartMining(webDriver);
