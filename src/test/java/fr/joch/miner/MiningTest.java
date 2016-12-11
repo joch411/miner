@@ -131,12 +131,8 @@ public class MiningTest {
 				.get(indexToMine);
 		if ("Stop".equals(monero.findElement(By.className("btn")).getText())) {
 			System.out.println("Restarting mining ....");
-			webDriver.get(webDriver.getCurrentUrl());
-			// Thread.sleep(1000);
-			// monero.findElement(By.className("btn")).click();
+			monero.findElement(By.className("btn")).click();
 			Thread.sleep(2000);
-			monero = webDriver.findElements(By.className("web-miner"))
-					.get(indexToMine);
 		}
 		monero.findElement(By.className("btn")).click();
 		Thread.sleep(5000);
