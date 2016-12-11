@@ -49,9 +49,10 @@ public class MiningTest {
 		webDriver.manage().addCookie(token);
 
 		Thread.sleep(2000);
-
 		webDriver.get("https://fr.minergate.com/internal");
 		Thread.sleep(3000);
+		webDriver.get("https://fr.minergate.com/web-miner");
+
 		System.out.println("\n\n\n\n\n\n-------------------------------");
 		System.out.println("Mining on : " + webDriver
 				.findElements(By.className("web-miner")).get(indexToMine)
@@ -64,7 +65,6 @@ public class MiningTest {
 							"Historique de retraitHistorique des transfertsDébiterEnvoyer",
 							""));
 		}
-		webDriver.get("https://fr.minergate.com/web-miner");
 		if (!webDriver.getPageSource().contains("Se déconnecter")) {
 			System.err.println("ERROR COOKIE");
 			System.exit(1);
