@@ -77,6 +77,8 @@ public class MiningTest {
 		System.out.println("Mining on : " + webDriver
 				.findElements(By.className("web-miner")).get(indexToMine)
 				.findElement(By.className("name")).getText());
+		
+		Thread.sleep(5000);
 
 		if (!webDriver.getPageSource().contains("Se déconnecter")
 				|| webDriver.getPageSource()
@@ -85,6 +87,8 @@ public class MiningTest {
 
 			resetCookies(webDriver);
 			webDriver.get("https://fr.minergate.com/web-miner");
+			
+			Thread.sleep(5000);
 
 			if (!webDriver.getPageSource().contains("Se déconnecter")
 					|| webDriver.getPageSource()
