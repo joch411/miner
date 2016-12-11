@@ -52,6 +52,11 @@ public class MiningTest {
 
 		webDriver.get("https://fr.minergate.com/internal");
 		Thread.sleep(3000);
+		System.out.println("\n\n\n\n\n\n-------------------------------");
+		System.out.println("Mining on : " + webDriver
+				.findElements(By.className("web-miner")).get(indexToMine)
+				.findElement(By.className("name")).getText());
+		
 		for (WebElement e : webDriver
 				.findElements(By.className("mine-title"))) {
 			System.out.println(e.getText().replace("\r\n", "")
