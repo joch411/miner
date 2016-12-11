@@ -73,7 +73,7 @@ public class MiningTest {
 		restartMining(webDriver);
 
 		int last0 = 0;
-		for (int i = 0; i < 40 * 60 / 2; i++) {
+		for (int i = 0; i < 40 * 60; i++) {
 			float v = extractVelocity();
 			System.out.println(MessageFormat.format("{0}H/s| {1} shares - Last : {2}",
 					Float.toString(v), getShares(), getLastShare()));
@@ -83,12 +83,12 @@ public class MiningTest {
 			else {
 				last0 = 0;
 			}
-			if (last0 == 25 || getLastShare().equals("il y a 5 minutes")) {
+			if (last0 == 45 || getLastShare().equals("il y a 5 minutes")) {
 				restartMining(webDriver);
 				last0 = 0;
 				Thread.sleep(2000);
 			}
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		}
 
 		WebElement monero = webDriver.findElements(By.className("web-miner"))
