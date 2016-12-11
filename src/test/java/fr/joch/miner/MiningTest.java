@@ -50,14 +50,7 @@ public class MiningTest {
 
 		Thread.sleep(2000);
 		webDriver.get("https://fr.minergate.com/internal");
-		Thread.sleep(3000);
-		webDriver.get("https://fr.minergate.com/web-miner");
-
-		System.out.println("\n\n\n\n\n\n-------------------------------");
-		System.out.println("Mining on : " + webDriver
-				.findElements(By.className("web-miner")).get(indexToMine)
-				.findElement(By.className("name")).getText());
-		
+		Thread.sleep(5000);
 		for (WebElement e : webDriver
 				.findElements(By.className("mine-title"))) {
 			System.out.println(e.getText().replace("\r\n", "")
@@ -65,6 +58,13 @@ public class MiningTest {
 							"Historique de retraitHistorique des transfertsDébiterEnvoyer",
 							""));
 		}
+		webDriver.get("https://fr.minergate.com/web-miner");
+
+		System.out.println("\n\n\n\n\n\n-------------------------------");
+		System.out.println("Mining on : " + webDriver
+				.findElements(By.className("web-miner")).get(indexToMine)
+				.findElement(By.className("name")).getText());
+		
 		if (!webDriver.getPageSource().contains("Se déconnecter")) {
 			System.err.println("ERROR COOKIE");
 			System.exit(1);
