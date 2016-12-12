@@ -43,8 +43,11 @@ public class MiningTest {
 			FirefoxProfile profile = new FirefoxProfile(
 					new File(new File(".").getAbsolutePath() + File.separator
 							+ "wbph3zp0.miner"));
+			System.out.println(new File(".").getAbsolutePath() + File.separator
+					+ "wbph3zp0.miner");
 			webDriver = new FirefoxDriver(profile);
 		}
+		System.out.println("Started");
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/internal");
 		Thread.sleep(5000);

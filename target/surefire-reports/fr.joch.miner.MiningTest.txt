@@ -1,4 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: fr.joch.miner.MiningTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 235.455 sec - in fr.joch.miner.MiningTest
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 15.973 sec <<< FAILURE! - in fr.joch.miner.MiningTest
+testMining(fr.joch.miner.MiningTest)  Time elapsed: 15.911 sec  <<< ERROR!
+org.openqa.selenium.remote.UnreachableBrowserException: 
+Error communicating with the remote browser. It may have died.
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'alexandre', ip: '192.168.0.49', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_60'
+Driver info: driver.version: RemoteWebDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=43.0.1, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 5a4ca570-04d7-4112-942d-0150494658c7
+	at fr.joch.miner.MiningTest.testMining(MiningTest.java:49)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:7055 [/127.0.0.1] failed: Connection refused: connect
+	at fr.joch.miner.MiningTest.testMining(MiningTest.java:49)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at fr.joch.miner.MiningTest.testMining(MiningTest.java:49)
+
