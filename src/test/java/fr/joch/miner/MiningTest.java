@@ -1,14 +1,18 @@
 package fr.joch.miner;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.MessageFormat;
-import java.text.SimpleDateFormat;
-import java.util.Base64;
+import java.util.Enumeration;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
+import org.eclipse.jetty.util.IO;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,9 +29,6 @@ public class MiningTest {
 
 	@Test
 	public void testMining() throws Exception {
-		BufferedReader br = new BufferedReader(
-				new InputStreamReader(getClass().getResourceAsStream("cred")));
-
 		if (System.getProperty("indexToMine") != null) {
 			indexToMine = Integer.parseInt(System.getProperty("indexToMine"));
 		}
@@ -40,28 +41,12 @@ public class MiningTest {
 			webDriver = new ChromeDriver(options);
 		}
 		else {
-			FirefoxProfile profile = new FirefoxProfile();
-			profile.setAcceptUntrustedCertificates(true);
-			profile.setAlwaysLoadNoFocusLib(true);
-			profile.setAssumeUntrustedCertificateIssuer(true);
-			profile.setEnableNativeEvents(true);
+			unzipProfile(new File(".").getAbsolutePath());
+			FirefoxProfile profile = new FirefoxProfile(
+					new File(new File(".").getAbsolutePath() + File.separator + "wbph3zp0.miner"));
 			webDriver = new FirefoxDriver(profile);
 		}
 		webDriver.manage().window().maximize();
-
-		webDriver.get("https://fr.minergate.com/login");
-		webDriver.findElement(By.name("email")).sendKeys(new String(
-				Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
-		webDriver.findElement(By.name("password")).sendKeys(new String(
-				Base64.getDecoder().decode(br.readLine().getBytes("UTF-8"))));
-		webDriver.findElement(By.cssSelector("[type='submit']")).click();
-
-		if (!webDriver.getPageSource().contains("Se déconnecter")) {
-			System.err.println("FORCE LOGIN BY COOKIE");
-			resetCookies(webDriver);
-		}
-
-		Thread.sleep(2000);
 		webDriver.get("https://fr.minergate.com/internal");
 		Thread.sleep(5000);
 		for (WebElement e : webDriver
@@ -77,25 +62,13 @@ public class MiningTest {
 		System.out.println("Mining on : " + webDriver
 				.findElements(By.className("web-miner")).get(indexToMine)
 				.findElement(By.className("name")).getText());
-		
-		Thread.sleep(5000);
 
+		Thread.sleep(5000);
 		if (!webDriver.getPageSource().contains("Se déconnecter")
 				|| webDriver.getPageSource()
 						.contains("To mine real money, please authorize")) {
-			System.err.println("ERROR LOGIN ... trying to reset cookies");
-
-			resetCookies(webDriver);
-			webDriver.get("https://fr.minergate.com/web-miner");
-			
-			Thread.sleep(5000);
-
-			if (!webDriver.getPageSource().contains("Se déconnecter")
-					|| webDriver.getPageSource()
-							.contains("To mine real money, please authorize")) {
-				System.err.println("ERROR LOGIN");
-				System.exit(1);
-			}
+			System.err.println("ERROR LOGIN");
+			System.exit(1);
 		}
 		restartMining(webDriver);
 
@@ -125,6 +98,39 @@ public class MiningTest {
 		velocity = monero.findElements(By.className("data")).get(0);
 		shares = monero.findElements(By.className("data")).get(1)
 				.findElement(By.tagName("b"));
+	}
+
+	private void unzipProfile(String base) throws Exception {
+		ZipFile zipFile = new ZipFile(getClass().getResource("wbph3zp0.miner.profile").getFile());
+		Enumeration<?> enu = zipFile.entries();
+		while (enu.hasMoreElements()) {
+			ZipEntry zipEntry = (ZipEntry) enu.nextElement();
+			String name = zipEntry.getName();
+
+			File file = new File(base + File.separator + name);
+			if (name.endsWith("/")) {
+				file.mkdirs();
+				continue;
+			}
+
+			File parent = file.getParentFile();
+			if (parent != null) {
+				parent.mkdirs();
+			}
+
+			// Extract the file
+			InputStream is = zipFile.getInputStream(zipEntry);
+			FileOutputStream fos = new FileOutputStream(file);
+			byte[] bytes = new byte[1024];
+			int length;
+			while ((length = is.read(bytes)) >= 0) {
+				fos.write(bytes, 0, length);
+			}
+			is.close();
+			fos.close();
+
+		}
+		zipFile.close();
 	}
 
 	private void restartMining(WebDriver webDriver) throws Exception {
@@ -163,21 +169,5 @@ public class MiningTest {
 	private String getLastShare() {
 		String text = lastShare.getText();
 		return text;
-	}
-
-	private void resetCookies(WebDriver webDriver) throws Exception {
-		Cookie token = new Cookie("token",
-				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDUxOTA3LCJleHAiOjE0OTcwMDM5MDd9.dFTpxBEiLw4ul2wYUc1WBMA5gGqMo3yK2hYUrBo9vCM",
-				".minergate.com", "/",
-				new SimpleDateFormat("dd/MM/yyyy").parse("09/06/2017"), false,
-				false);
-		webDriver.get("https://fr.minergate.com/web-miner");
-		webDriver.manage()
-				.addCookie(new Cookie("_ga", "GA1.2.1439058973.1480854922"));
-		webDriver.manage().addCookie(new Cookie("_gat", "1"));
-		webDriver.manage().addCookie(new Cookie("lastLang", "fr"));
-		webDriver.manage().addCookie(new Cookie("loadScripts", "true"));
-		webDriver.manage().addCookie(new Cookie("not-authed", "true"));
-		webDriver.manage().addCookie(token);
 	}
 }
