@@ -22,7 +22,7 @@ public class MiningTest {
 
 	private WebElement velocity;
 	private WebElement shares;
-	private int indexToMine = 1;
+	private int indexToMine = 3;
 	private WebElement lastShare;
 
 	@Test
@@ -59,7 +59,11 @@ public class MiningTest {
 							"Historique de retraitHistorique des transfertsDébiterEnvoyer",
 							""));
 		}
-		webDriver.get("https://fr.minergate.com/web-miner");
+		webDriver.findElement(By.className("subheader")).findElements(By.tagName("a")).get(4).click();
+		Thread.sleep(2000);
+		webDriver.findElement(By.name("infoForm")).findElement(By.className("btn")).click();
+		Thread.sleep(2000);
+		webDriver.findElement(By.className("iconed-mining")).click();
 
 		System.out.println("\n\n\n\n\n\n-------------------------------");
 		System.out.println("Mining on : " + webDriver
