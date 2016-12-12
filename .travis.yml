@@ -16,5 +16,4 @@ cache:
 addons:
   firefox: "33.0"
   hosts:
-    - aus5.mozilla.org
     - ciscobinary.openh264.org
