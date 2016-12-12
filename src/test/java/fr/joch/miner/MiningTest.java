@@ -44,7 +44,9 @@ public class MiningTest {
 					new File(new File("").getAbsolutePath() + File.separator
 							+ "wbph3zp0.miner"));
 			System.out.println(new File("").getAbsolutePath() + File.separator + "wbph3zp0.miner");
-			webDriver = new FirefoxDriver(profile);
+			FirefoxBinary binary = new FirefoxBinary();
+			binary.setTimeout(120000);
+			webDriver = new FirefoxDriver(binary, profile);
 		}
 		System.out.println("Started");
 		webDriver.manage().window().maximize();

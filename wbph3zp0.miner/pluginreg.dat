@@ -2,219 +2,36 @@ Generated File. Do not edit.
 
 [HEADER]
 Version|0.17|$
-Arch|x86-msvc|$
+Arch|x86_64-msvc|$
 
 [PLUGINS]
-nppdf32.dll|$
-C:\Program Files (x86)\Adobe\Reader 10.0\Reader\browser\nppdf32.dll|$
-10.1.8.24|$
-1378216432000|0|0|0|$
-Adobe PDF Plug-In For Firefox and Netscape 10.1.8|$
-Adobe Acrobat|$
-7
-0|application/pdf|Acrobat Portable Document Format|pdf|$
-1|application/vnd.adobe.pdfxml|Adobe PDF in XML Format|pdfxml|$
-2|application/vnd.adobe.x-mars|Adobe PDF in XML Format|mars|$
-3|application/vnd.fdf|Acrobat Forms Data Format|fdf|$
-4|application/vnd.adobe.xfdf|XML Version of Acrobat Forms Data Format|xfdf|$
-5|application/vnd.adobe.xdp+xml| Acrobat XML Data Package|xdp|$
-6|application/vnd.adobe.xfd+xml|Adobe FormFlow99 Data File|xfd|$
-nppdf32.dll|$
-C:\Program Files (x86)\Adobe\Reader 10.0\Reader\AIR\nppdf32.dll|$
-10.1.8.24|$
-1378216438000|0|0|0|$
-Adobe PDF Plug-In For Firefox and Netscape 10.1.8|$
-Adobe Acrobat|$
-7
-0|application/pdf|Acrobat Portable Document Format|pdf|$
-1|application/vnd.adobe.pdfxml|Adobe PDF in XML Format|pdfxml|$
-2|application/vnd.adobe.x-mars|Adobe PDF in XML Format|mars|$
-3|application/vnd.fdf|Acrobat Forms Data Format|fdf|$
-4|application/vnd.adobe.xfdf|XML Version of Acrobat Forms Data Format|xfdf|$
-5|application/vnd.adobe.xdp+xml| Acrobat XML Data Package|xdp|$
-6|application/vnd.adobe.xfd+xml|Adobe FormFlow99 Data File|xfd|$
-npvlc.dll|$
-D:\Program Files (x86)\VideoLAN\VLC\npvlc.dll|$
-2.1.3.0|$
-1406071752000|0|0|0|$
-VLC media player Web Plugin 2.1.3|$
-VLC Web Plugin|$
-44
-0|audio/mpeg|MPEG audio|mp2,mp3,mpga,mpega|$
-1|audio/x-mpeg|MPEG audio|mp2,mp3,mpga,mpega|$
-2|video/mpeg|MPEG video|mpg,mpeg,mpe|$
-3|video/x-mpeg|MPEG video|mpg,mpeg,mpe|$
-4|video/mpeg-system|MPEG video|mpg,mpeg,mpe,vob|$
-5|video/x-mpeg-system|MPEG video|mpg,mpeg,mpe,vob|$
-6|audio/mp4|MPEG-4 audio|aac,mp4,mpg4|$
-7|audio/x-m4a|MPEG-4 audio|m4a|$
-8|video/mp4|MPEG-4 video|mp4,mpg4|$
-9|application/mpeg4-iod|MPEG-4 video|mp4,mpg4|$
-10|application/mpeg4-muxcodetable|MPEG-4 video|mp4,mpg4|$
-11|video/x-m4v|MPEG-4 video|m4v|$
-12|video/x-msvideo|AVI video|avi|$
-13|application/ogg|Ogg stream|ogg|$
-14|video/ogg|Ogg video|ogv|$
-15|application/x-ogg|Ogg stream|ogg|$
-16|application/x-vlc-plugin|VLC plug-in||$
-17|video/x-ms-asf-plugin|Windows Media Video|asf,asx|$
-18|video/x-ms-asf|Windows Media Video|asf,asx|$
-19|application/x-mplayer2|Windows Media||$
-20|video/x-ms-wmv|Windows Media|wmv|$
-21|video/x-ms-wvx|Windows Media Video|wvx|$
-22|audio/x-ms-wma|Windows Media Audio|wma|$
-23|application/x-google-vlc-plugin|Google VLC plug-in||$
-24|audio/wav|WAV audio|wav|$
-25|audio/x-wav|WAV audio|wav|$
-26|audio/3gpp|3GPP audio|3gp,3gpp|$
-27|video/3gpp|3GPP video|3gp,3gpp|$
-28|audio/3gpp2|3GPP2 audio|3g2,3gpp2|$
-29|video/3gpp2|3GPP2 video|3g2,3gpp2|$
-30|video/divx|DivX video|divx|$
-31|video/flv|FLV video|flv|$
-32|video/x-flv|FLV video|flv|$
-33|application/x-matroska|Matroska video|mkv|$
-34|video/x-matroska|Matroska video|mkv|$
-35|audio/x-matroska|Matroska audio|mka|$
-36|application/xspf+xml|Playlist xspf|xspf|$
-37|audio/x-mpegurl|MPEG audio|m3u|$
-38|video/webm|WebM video|webm|$
-39|audio/webm|WebM audio|webm|$
-40|application/vnd.rn-realmedia|Real Media File|rm|$
-41|audio/x-realaudio|Real Media Audio|ra|$
-42|audio/amr|AMR audio|amr|$
-43|audio/x-flac|FLAC audio|flac|$
-npGoogleUpdate3.dll|$
-C:\Program Files (x86)\Google\Update\1.3.31.5\npGoogleUpdate3.dll|$
-1.3.31.5|$
-1469736403904|0|0|0|$
-Google Update|$
-Google Update|$
-2
-0|application/x-vnd.google.update3webcontrol.3|||$
-1|application/x-vnd.google.oneclickctrl.9|||$
-NPWLPG.dll|$
-C:\Program Files (x86)\Windows Live\Photo Gallery\NPWLPG.dll|$
-16.4.3505.912|$
-1347461858000|0|0|0|$
-NPWLPG|$
-Photo Gallery|$
-2
-0|application/x-wlpg3-detect|Photo Gallery|wlpg|$
-1|application/x-wlpg-detect|Photo Gallery|wlpg|$
-NPSPWRAP.DLL|$
-C:\PROGRA~2\MICROS~1\Office15\NPSPWRAP.DLL|$
-15.0.4514.1000|$
-1390356704000|0|0|0|$
-The plugin allows you to have a better experience with Microsoft SharePoint|$
-Microsoft Office 2013|$
-2
-0|application/x-sharepoint|SharePoint Plug-in for Firefox||$
-1|application/x-sharepoint-uc|||$
 npctrl.dll|$
-C:\Program Files (x86)\Microsoft Silverlight\5.1.40728.0\npctrl.dll|$
+C:\Program Files\Microsoft Silverlight\5.1.40728.0\npctrl.dll|$
 5.1.40728.0|$
-1438040874000|0|0|0|$
+1438042484000|0|0|0|$
 5.1.40728.0|$
 Silverlight Plug-In|$
 2
 0|application/x-silverlight|npctrl|scr|$
 1|application/x-silverlight-2|||$
-npMeetingJoinPluginOC.dll|$
-C:\Program Files (x86)\Mozilla Firefox\plugins\npMeetingJoinPluginOC.dll|$
-15.0.4703.1000|$
-1429716192000|0|0|0|$
-The plugin allows you to have a better experience with Microsoft Lync|$
-Microsoft Office 2013|$
-1
-0|application/vnd.microsoft.communicator.ocsmeeting|Lync Plug-in for Firefox||$
-npjp2.dll|$
-C:\Program Files (x86)\Java\jre1.8.0_45\bin\plugin2\npjp2.dll|$
-11.45.2.14|$
-1429905539159|0|0|0|$
-Next Generation Java Plug-in 11.45.2 for Mozilla browsers|$
-Java(TM) Platform SE 8 U45|$
-38
-0|application/x-java-applet|Java Applet||$
-1|application/x-java-bean|JavaBeans||$
-2|application/x-java-vm|||$
-3|application/x-java-applet;version=1.1.1|||$
-4|application/x-java-bean;version=1.1.1|||$
-5|application/x-java-applet;version=1.1|||$
-6|application/x-java-bean;version=1.1|||$
-7|application/x-java-applet;version=1.2|||$
-8|application/x-java-bean;version=1.2|||$
-9|application/x-java-applet;version=1.1.3|||$
-10|application/x-java-bean;version=1.1.3|||$
-11|application/x-java-applet;version=1.1.2|||$
-12|application/x-java-bean;version=1.1.2|||$
-13|application/x-java-applet;version=1.3|||$
-14|application/x-java-bean;version=1.3|||$
-15|application/x-java-applet;version=1.2.2|||$
-16|application/x-java-bean;version=1.2.2|||$
-17|application/x-java-applet;version=1.2.1|||$
-18|application/x-java-bean;version=1.2.1|||$
-19|application/x-java-applet;version=1.3.1|||$
-20|application/x-java-bean;version=1.3.1|||$
-21|application/x-java-applet;version=1.4|||$
-22|application/x-java-bean;version=1.4|||$
-23|application/x-java-applet;version=1.4.1|||$
-24|application/x-java-bean;version=1.4.1|||$
-25|application/x-java-applet;version=1.4.2|||$
-26|application/x-java-bean;version=1.4.2|||$
-27|application/x-java-applet;version=1.5|||$
-28|application/x-java-bean;version=1.5|||$
-29|application/x-java-applet;version=1.6|||$
-30|application/x-java-bean;version=1.6|||$
-31|application/x-java-applet;version=1.7|||$
-32|application/x-java-bean;version=1.7|||$
-33|application/x-java-applet;jpi-version=1.8.0_45|||$
-34|application/x-java-bean;jpi-version=1.8.0_45|||$
-35|application/x-java-vm-npruntime|||$
-36|application/x-java-applet;deploy=11.45.2|||$
-37|application/x-java-applet;javafx=8.0.45|||$
-npdeployJava1.dll|$
-C:\Program Files (x86)\Java\jre1.8.0_45\bin\dtplugin\npdeployJava1.dll|$
-11.45.2.14|$
-1429905538175|0|0|0|$
-NPRuntime Script Plug-in Library for Java(TM) Deploy|$
-Java Deployment Toolkit 8.0.450.14|$
-1
-0|application/java-deployment-toolkit|||$
-npIntelWebAPIIPT.dll|$
-C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT\npIntelWebAPIIPT.dll|$
-4.0.56.0|$
-1420555230000|0|0|0|$
-Intel web components for Intel® Identity Protection Technology|$
-Intel® Identity Protection Technology|$
-1
-0|application/x-vnd-intel-webapi-ipt-4.0.56|npIntelWebAPIipt-3-5||$
-npIntelWebAPIUpdater.dll|$
-C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT\npIntelWebAPIUpdater.dll|$
-4.0.56.0|$
-1420555230000|0|0|0|$
-Intel web components updater - Installs and updates the Intel web components|$
-Intel® Identity Protection Technology|$
-1
-0|application/x-vnd-intel-webapi-updater|npIntelWebAPIupdater-2-0|intel_webapi_updater-2-0|$
-NPSWF32_23_0_0_207.dll|$
-C:\WINDOWS\SysWoW64\Macromed\Flash\NPSWF32_23_0_0_207.dll|$
+NPSWF64_23_0_0_207.dll|$
+C:\WINDOWS\system32\Macromed\Flash\NPSWF64_23_0_0_207.dll|$
 23.0.0.207|$
-1478908946931|0|0|0|$
+1478908945275|0|0|0|$
 Shockwave Flash 23.0 r0|$
 Shockwave Flash|$
 2
 0|application/x-shockwave-flash|Adobe Flash movie|swf|$
 1|application/futuresplash|FutureSplash movie|spl|$
-npUnity3D32.dll|$
-C:\Users\Alexandre\AppData\LocalLow\Unity\WebPlayer\loader\npUnity3D32.dll|$
-4.5.2.26843|$
-1404748078000|0|0|0|$
-Unity Player 4.5.2f1|$
-Unity Player|$
-1
-0|application/vnd.unity|Unity Player datafile|unity3d|$
 
 [INVALID]
-C:\Program Files (x86)\Microsoft Silverlight\5.1.40728.0\npctrlui.dll|$
-1438040874000|$
+C:\Program Files\Microsoft Silverlight\5.1.40728.0\npctrlui.dll|$
+1438042484000|$
+C:\Windows\system32\NPSMDesktopProvider.dll|$
+1468669329577|$
+C:\Windows\system32\npmproxy.dll|$
+1468669332483|$
+C:\Windows\system32\NPSM.dll|$
+1478081977513|$
+C:\Users\Alexandre\AppData\LocalLow\Unity\WebPlayer\loader\npUnity3D32.dll|$
+1404748078000|$
