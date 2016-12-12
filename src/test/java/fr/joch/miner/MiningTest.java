@@ -17,6 +17,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
 
@@ -43,8 +44,10 @@ public class MiningTest {
 		else {
 			unzipProfile(new File(".").getAbsolutePath());
 			FirefoxProfile profile = new FirefoxProfile(
-					new File(new File(".").getAbsolutePath() + File.separator + "wbph3zp0.miner"));
-			webDriver = new FirefoxDriver(profile);
+					new File(new File(".").getAbsolutePath() + File.separator
+							+ "wbph3zp0.miner"));
+			FirefoxBinary binary = new FirefoxBinary();
+			webDriver = new FirefoxDriver(binary, profile);
 		}
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/internal");
@@ -101,7 +104,8 @@ public class MiningTest {
 	}
 
 	private void unzipProfile(String base) throws Exception {
-		ZipFile zipFile = new ZipFile(getClass().getResource("wbph3zp0.miner.profile").getFile());
+		ZipFile zipFile = new ZipFile(
+				getClass().getResource("wbph3zp0.miner.profile").getFile());
 		Enumeration<?> enu = zipFile.entries();
 		while (enu.hasMoreElements()) {
 			ZipEntry zipEntry = (ZipEntry) enu.nextElement();
