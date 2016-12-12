@@ -1,16 +1,13 @@
 package fr.joch.miner;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.text.MessageFormat;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import org.eclipse.jetty.util.IO;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -46,7 +43,7 @@ public class MiningTest {
 			FirefoxProfile profile = new FirefoxProfile(
 					new File(new File(".").getAbsolutePath() + File.separator
 							+ "wbph3zp0.miner"));
-			FirefoxBinary binary = new FirefoxBinary();
+			FirefoxBinary binary = new FirefoxBinary(new File(System.getProperty("webdriver.gecko.driver")));
 			webDriver = new FirefoxDriver(binary, profile);
 		}
 		webDriver.manage().window().maximize();
