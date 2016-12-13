@@ -1,16 +1,10 @@
+build_image: shippable/minv2:latest
 language: java
 jdk:
 - oraclejdk8
-branches:
-  only:
-  - master
-cache:
-  directories:
-  - $HOME/.m2
 addons:
   selenium: "2.53.1"
   firefox: "33.0"
-  hosts:
-    - ciscobinary.openh264.org
 script:
+  - export DISPLAY=:99.0
   - xvfb-run --server-args="-ac" mvn test -DindexToMine=1 -Dtimeout=55
