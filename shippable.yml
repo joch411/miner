@@ -4,8 +4,6 @@ jdk:
 branches:
   only:
   - master
-services:
-  - selenium
 cache:
   directories:
   - $HOME/.m2
