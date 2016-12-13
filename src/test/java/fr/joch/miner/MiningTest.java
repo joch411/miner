@@ -43,23 +43,25 @@ public class MiningTest {
 			FirefoxProfile profile = new FirefoxProfile(
 					new File(new File("").getAbsolutePath() + File.separator
 							+ "wbph3zp0.miner"));
-			System.out.println(new File("").getAbsolutePath() + File.separator + "wbph3zp0.miner");
+			System.out.println(new File("").getAbsolutePath() + File.separator
+					+ "wbph3zp0.miner");
 			FirefoxBinary binary = new FirefoxBinary();
 			binary.setTimeout(180000);
 			webDriver = new FirefoxDriver(binary, profile);
 		}
-		
+
 		System.out.println("Started");
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/internal");
-		webDriver.findElement(By.className("logo-wrapper")).findElement(By.tagName("a")).click();
+		webDriver.findElement(By.className("logo-wrapper"))
+				.findElement(By.tagName("a")).click();
 		Thread.sleep(3000);
 		webDriver.findElement(By.className("iconed-dashboard")).click();
 		Thread.sleep(3000);
 		webDriver.findElement(By.className("iconed-mining")).click();
 		Thread.sleep(3000);
 		webDriver.findElement(By.className("iconed-dashboard")).click();
-		
+
 		Thread.sleep(5000);
 		for (WebElement e : webDriver
 				.findElements(By.className("mine-title"))) {
@@ -68,9 +70,11 @@ public class MiningTest {
 							"Historique de retraitHistorique des transfertsDébiterEnvoyer",
 							""));
 		}
-		webDriver.findElement(By.className("subheader")).findElements(By.tagName("a")).get(4).click();
+		webDriver.findElement(By.className("subheader"))
+				.findElements(By.tagName("a")).get(4).click();
 		Thread.sleep(3000);
-		webDriver.findElement(By.name("infoForm")).findElement(By.className("btn")).click();
+		webDriver.findElement(By.name("infoForm"))
+				.findElement(By.className("btn")).click();
 		Thread.sleep(3000);
 		webDriver.findElement(By.className("iconed-mining")).click();
 
@@ -90,10 +94,11 @@ public class MiningTest {
 
 		int last0 = 0;
 		int min = 40;
+		int it = 0;
 		if (System.getProperty("timeout") != null) {
 			min = Integer.parseInt(System.getProperty("timeout"));
 		}
-		for (int i = 0; i < min * 60; i++) {
+		for (int i = 0; i < min * 60; i++, it++) {
 			float v = extractVelocity();
 			System.out.println(
 					MessageFormat.format("{0}H/s| {1} shares - Last : {2}",
@@ -104,13 +109,15 @@ public class MiningTest {
 			else {
 				last0 = 0;
 			}
-			if (last0 == 20) {
+			if (last0 == 20 || (it == 20 && "n/a".equals(getLastShare()))) {
 				restartMining(webDriver);
 				last0 = 0;
+				it = 0;
 				Thread.sleep(2000);
 			}
 			if (getLastShare().equals("il y a 10 minutes")) {
-				WebElement monero = webDriver.findElements(By.className("web-miner"))
+				WebElement monero = webDriver
+						.findElements(By.className("web-miner"))
 						.get(indexToMine);
 				monero.findElement(By.className("btn")).click();
 				Thread.sleep(2000);
