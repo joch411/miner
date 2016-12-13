@@ -109,6 +109,16 @@ public class MiningTest {
 				last0 = 0;
 				Thread.sleep(2000);
 			}
+			if (getLastShare().equals("il y a 10 minutes")) {
+				WebElement monero = webDriver.findElements(By.className("web-miner"))
+						.get(indexToMine);
+				monero.findElement(By.className("btn")).click();
+				Thread.sleep(2000);
+				webDriver.findElement(By.className("iconed-mining")).click();
+				Thread.sleep(2000);
+				restartMining(webDriver);
+				Thread.sleep(2000);
+			}
 			Thread.sleep(1000);
 		}
 

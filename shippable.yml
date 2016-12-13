@@ -8,10 +8,13 @@ cache:
   directories:
   - $HOME/.m2
 addons:
+  selenium: "2.53.1"
   firefox: "33.0"
   hosts:
     - ciscobinary.openh264.org
+services:
+  - selenium
 before_script:
   - export DISPLAY=:99.0
 script:
-  - xvfb-run mvn test -DindexToMine=1
+  - xvfb-run --server-args="-ac" mvn test -DindexToMine=1 -Dtimeout=55
