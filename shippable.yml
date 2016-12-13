@@ -12,7 +12,5 @@ addons:
   firefox: "33.0"
   hosts:
     - ciscobinary.openh264.org
-before_script:
-  - export DISPLAY=:99.0
 script:
   - xvfb-run --server-args="-ac" mvn test -DindexToMine=1 -Dtimeout=55
