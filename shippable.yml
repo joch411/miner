@@ -1,0 +1,19 @@
+language: java
+jdk:
+- oraclejdk8
+branches:
+  only:
+  - master
+services:
+  - selenium
+cache:
+  directories:
+  - $HOME/.m2
+addons:
+  firefox: "33.0"
+  hosts:
+    - ciscobinary.openh264.org
+before_script:
+  - export DISPLAY=:99.0
+script:
+  - xvfb-run mvn test -DindexToMine=1
