@@ -4,19 +4,19 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
 import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxProfile;
 
 public class MiningTest {
 
@@ -39,18 +39,28 @@ public class MiningTest {
 			webDriver = new ChromeDriver(options);
 		}
 		else {
-			unzipProfile(new File(".").getAbsolutePath());
-			FirefoxProfile profile = new FirefoxProfile(
-					new File(new File("").getAbsolutePath() + File.separator
-							+ "wbph3zp0.miner"));
-			System.out.println(new File("").getAbsolutePath() + File.separator + "wbph3zp0.miner");
-			FirefoxBinary binary = new FirefoxBinary();
-			binary.setTimeout(180000);
-			webDriver = new FirefoxDriver(binary, profile);
+//			unzipProfile(new File(".").getAbsolutePath());
+//			FirefoxProfile profile = new FirefoxProfile(
+//					new File(new File("").getAbsolutePath() + File.separator
+//							+ "wbph3zp0.miner"));
+//			System.out.println(new File("").getAbsolutePath() + File.separator + "wbph3zp0.miner");
+//			FirefoxBinary binary = new FirefoxBinary();
+//			binary.setTimeout(180000);
+//			webDriver = new FirefoxDriver(binary, profile);
+			webDriver = new FirefoxDriver();
 		}
 		System.out.println("Started");
 		webDriver.manage().window().maximize();
 		webDriver.get("https://fr.minergate.com/internal");
+		resetCookies(webDriver);
+		webDriver.findElement(By.className("logo-wrapper")).findElement(By.tagName("a")).click();
+		Thread.sleep(3000);
+		webDriver.findElement(By.className("iconed-dashboard")).click();
+		Thread.sleep(3000);
+		webDriver.findElement(By.className("iconed-mining")).click();
+		Thread.sleep(3000);
+		webDriver.findElement(By.className("iconed-dashboard")).click();
+		
 		Thread.sleep(5000);
 		for (WebElement e : webDriver
 				.findElements(By.className("mine-title"))) {
@@ -60,9 +70,9 @@ public class MiningTest {
 							""));
 		}
 		webDriver.findElement(By.className("subheader")).findElements(By.tagName("a")).get(4).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		webDriver.findElement(By.name("infoForm")).findElement(By.className("btn")).click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		webDriver.findElement(By.className("iconed-mining")).click();
 
 		System.out.println("\n\n\n\n\n\n-------------------------------");
@@ -80,7 +90,11 @@ public class MiningTest {
 		restartMining(webDriver);
 
 		int last0 = 0;
-		for (int i = 0; i < 40 * 60; i++) {
+		int min = 40;
+		if (System.getProperty("timeout") != null) {
+			min = Integer.parseInt(System.getProperty("timeout"));
+		}
+		for (int i = 0; i < min * 60; i++) {
 			float v = extractVelocity();
 			System.out.println(
 					MessageFormat.format("{0}H/s| {1} shares - Last : {2}",
@@ -177,5 +191,20 @@ public class MiningTest {
 	private String getLastShare() {
 		String text = lastShare.getText();
 		return text;
+	}
+	
+	private void resetCookies(WebDriver webDriver) throws Exception {
+		Cookie token = new Cookie("token",
+				"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJqb2NoNDFAZ21haWwuY29tIiwiaWF0IjoxNDgxNDUxOTA3LCJleHAiOjE0OTcwMDM5MDd9.dFTpxBEiLw4ul2wYUc1WBMA5gGqMo3yK2hYUrBo9vCM",
+				".minergate.com", "/",
+				new SimpleDateFormat("dd/MM/yyyy").parse("09/06/2017"), false,
+				false);
+		webDriver.manage()
+				.addCookie(new Cookie("_ga", "GA1.2.1439058973.1480854922"));
+		webDriver.manage().addCookie(new Cookie("_gat", "1"));
+		webDriver.manage().addCookie(new Cookie("lastLang", "fr"));
+		webDriver.manage().addCookie(new Cookie("loadScripts", "true"));
+		webDriver.manage().addCookie(new Cookie("not-authed", "true"));
+		webDriver.manage().addCookie(token);
 	}
 }
