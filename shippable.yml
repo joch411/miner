@@ -12,8 +12,6 @@ addons:
   firefox: "33.0"
   hosts:
     - ciscobinary.openh264.org
-services:
-  - selenium
 before_script:
   - export DISPLAY=:99.0
 script:
