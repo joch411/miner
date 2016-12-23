@@ -121,7 +121,7 @@ public class MiningTest {
 						.get(indexToMine);
 				monero.findElement(By.className("btn")).click();
 				Thread.sleep(2000);
-				webDriver.findElement(By.className("iconed-mining")).click();
+				webDriver.findElement(By.cssSelector("[href='/web-miner']")).click();
 				Thread.sleep(2000);
 				restartMining(webDriver);
 				Thread.sleep(2000);
@@ -172,7 +172,7 @@ public class MiningTest {
 	}
 
 	private void restartMining(WebDriver webDriver) throws Exception {
-		WebElement monero = webDriver.findElements(By.cssSelector("[href='/web-miner']"))
+		WebElement monero = webDriver.findElements(By.className("web-miner"))
 				.get(indexToMine);
 		if ("Stop".equals(monero.findElement(By.className("btn")).getText())) {
 			System.out.println("Restarting mining ....");
