@@ -77,7 +77,6 @@ public class MiningTest {
 				.findElement(By.className("btn")).click();
 		Thread.sleep(3000);
 		webDriver.findElement(By.cssSelector("[href='/web-miner']")).click();
-		Thread.sleep(10000);
 
 		System.out.println("\n\n\n\n\n\n-------------------------------");
 		System.out.println("Mining on : " + webDriver
