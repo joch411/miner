@@ -76,7 +76,7 @@ public class MiningTest {
 		webDriver.findElement(By.name("infoForm"))
 				.findElement(By.className("btn")).click();
 		Thread.sleep(3000);
-		webDriver.findElement(By.className("iconed-mining")).click();
+		webDriver.findElement(By.cssSelector("[href='/web-miner']")).click();
 		Thread.sleep(10000);
 
 		System.out.println("\n\n\n\n\n\n-------------------------------");
