@@ -98,17 +98,19 @@ public class MiningTest {
 		if (System.getProperty("timeout") != null) {
 			min = Integer.parseInt(System.getProperty("timeout"));
 		}
+		int previousShare = 0;
 		for (int i = 0; i < min * 60; i++, it++) {
 			float v = extractVelocity();
 			System.out.println(
 					MessageFormat.format("{0}H/s| {1} shares - Last : {2}",
 							Float.toString(v), getShares(), getLastShare()));
-			if (v == 0) {
+			if (v == 0 && previousShare == getNumberShares()) {
 				last0++;
 			}
 			else {
 				last0 = 0;
 			}
+			previousShare = getNumberShares();
 			if (last0 == 20 || (it == 20 && "n/a".equals(getLastShare()))) {
 				restartMining(webDriver);
 				last0 = 0;
@@ -207,5 +209,14 @@ public class MiningTest {
 	private String getLastShare() {
 		String text = lastShare.getText();
 		return text;
+	}
+	
+	private int getNumberShares() {
+		int shares = 0;
+		try {
+			shares = Integer.parseInt(getShares().substring(0, getShares().indexOf(" ")).trim());
+		} catch (Exception e) {
+		}
+		return shares;
 	}
 }
