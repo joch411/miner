@@ -214,7 +214,7 @@ public class MiningTest {
 	private int getNumberShares() {
 		int shares = 0;
 		try {
-			shares = Integer.parseInt(getShares().substring(0, getShares().indexOf(" ")).trim());
+			shares = Integer.parseInt(getShares().trim());
 		} catch (Exception e) {
 		}
 		return shares;
